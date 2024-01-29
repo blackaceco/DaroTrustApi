@@ -7,19 +7,12 @@ namespace Database\Seeders;
 use Database\Seeders\Navigation\GroupSeeder as NavigationGroupSeeder;
 use Database\Seeders\Navigation\ItemSeeder as NavigationItemSeeder;
 use Database\Seeders\Navigation\SchemaFeatureSeeder as NavigationSchemaFeatureSeeder;
-use Database\Seeders\Schema\ItemSeeders\AboutSeeder;
-use Database\Seeders\Schema\ItemSeeders\ContactSeeder;
-use Database\Seeders\Schema\ItemSeeders\DocumentarySeeder;
-use Database\Seeders\Schema\ItemSeeders\FestivalSeeder;
-use Database\Seeders\Schema\ItemSeeders\HomeSeeder;
-use Database\Seeders\Schema\ItemSeeders\PromoSeeder;
-use Database\Seeders\Schema\ItemSeeders\StorytellingSeeder;
-use Database\Seeders\Schema\ItemSeeders\TrainingSeeder;
 use Database\Seeders\Schema\PageGroupSeeder;
 use Database\Seeders\Schema\SchemaFeatureSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\Breadcrumb\SchemaFeatureSeeder as BreadcrumbSchemaFeatureSeeder;
 use Database\Seeders\Breadcrumb\CategorySeeder as BreadcrumbCategorySeeder;
+use Database\Seeders\Schema\ItemSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -54,14 +47,10 @@ class DatabaseSeeder extends Seeder
 
             GroupSeeder::class,
 
-            HomeSeeder::class,
-            DocumentarySeeder::class,
-            StorytellingSeeder::class,
-            FestivalSeeder::class,
-            TrainingSeeder::class,
-            AboutSeeder::class,
-            ContactSeeder::class,
-            PromoSeeder::class,
+            /**
+             * Item Seeders
+             */
+            ItemSeeder::class,
 
 
             /**

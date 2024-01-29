@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -51,5 +52,22 @@ class NavigationItemDetail extends Model
     public static function validationRules($existId = null)
     {
         return [];
+    }
+
+
+
+    protected function value(): Attribute
+    {
+        $types = ['image', 'thumbnail', 'gallery', 'video'];
+
+        if (!in_array($this->valueType, $types))
+            return Attribute::make(
+                get: fn ($value) => $value,
+            );
+            
+
+        return Attribute::make(
+            get: fn ($value) => getFileLink($value),
+        );
     }
 }

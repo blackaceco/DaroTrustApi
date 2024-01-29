@@ -15,9 +15,9 @@ class CategorySeeder extends Seeder
 
     public function __construct()
     {
-        $this->englishId = Language::where('abbreviation', 'en')->first()->id;
-        $this->arabicId = Language::where('abbreviation', 'ar')->first()->id;
-        $this->kurdishId = Language::where('abbreviation', 'ku')->first()->id;
+        // $this->englishId = Language::where('abbreviation', 'en')->first()->id;
+        // $this->arabicId = Language::where('abbreviation', 'ar')->first()->id;
+        // $this->kurdishId = Language::where('abbreviation', 'ku')->first()->id;
     }
 
     /**
@@ -26,49 +26,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         // # ---> 1
-        $this->schemaFeatureCreator("/", "documentary", 1, "Real Story", "قصة حقيقية", "چیرۆکی ڕاستەقینە");
+        // $this->schemaFeatureCreator("/", "documentary", 1, "Real Story", "قصة حقيقية", "چیرۆکی ڕاستەقینە");
 
         // # ---> 2
-        $this->schemaFeatureCreator("/works", "documentary", 2, "Works", "يعمل", "کار");
+        // $this->schemaFeatureCreator("/works", "documentary", 2, "Works", "يعمل", "کار");
 
         // # ---> 3
-        $this->schemaFeatureCreator(null, "documentary", 3, "Documentary", "وثائقي", "دۆکیومێنتاری");
-
-
-
-
-        // # ---> 4
-        $this->schemaFeatureCreator("/", "storytelling", 1, "Real Story", "قصة حقيقية", "چیرۆکی ڕاستەقینە");
-
-        // # ---> 5
-        $this->schemaFeatureCreator("/works", "storytelling", 2, "Works", "يعمل", "کار");
-
-        // # ---> 6
-        $this->schemaFeatureCreator(null, "storytelling", 3, "Storytelling", "القص", "چیرۆک");
-
-
-
-
-        // # ---> 7
-        $this->schemaFeatureCreator("/", "festival", 1, "Real Story", "قصة حقيقية", "چیرۆکی ڕاستەقینە");
-
-        // # ---> 8
-        $this->schemaFeatureCreator("/works", "festival", 2, "Works", "يعمل", "کار");
-
-        // # ---> 9
-        $this->schemaFeatureCreator(null, "festival", 3, "Festival", "مهرجان", "فیستیڤاڵ");
-
-
-
-
-        // # ---> 10
-        $this->schemaFeatureCreator("/", "training", 1, "Real Story", "قصة حقيقية", "چیرۆکی ڕاستەقینە");
-
-        // # ---> 11
-        $this->schemaFeatureCreator("/works", "training", 2, "Works", "يعمل", "کار");
-
-        // # ---> 12
-        $this->schemaFeatureCreator(null, "training", 3, "Trainings", "التدريبات", "ڕاهێنانەکان");
+        // $this->schemaFeatureCreator(null, "documentary", 3, "Documentary", "وثائقي", "دۆکیومێنتاری");
     }
 
 

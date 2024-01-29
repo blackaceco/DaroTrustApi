@@ -13,35 +13,40 @@ class SchemaFeatureSeeder extends Seeder
      */
     public function run(): void
     {
-        // # ---> 1
+        /**
+         * Navigation Bar
+         */
+        # ---> 1
         $this->schemaFeatureCreator("banner", 1, 1, false, [
-            'title' => "short_text",
+            'logo' => "image",
         ]);
 
-
-
-        // # ---> 2
-        $this->schemaFeatureCreator("banner", 1, 1, false, [
-            'title' => "short_text",
-        ]);
-
-        // # ---> 3
-        $this->schemaFeatureCreator("nav_item", 1, 8, true, [
+        # ---> 2
+        $this->schemaFeatureCreator("nav_item", 1, 20, true, [
             'title' => "long_text",
             'url' => "long_text",
         ]);
 
 
-
-        // # ---> 4
+        
+        /**
+         * Footer
+         */
+        # ---> 3
         $this->schemaFeatureCreator("banner", 1, 1, false, [
-            'title' => "short_text",
+            'title' => "long_text",
+            'description' => "textarea",
         ]);
 
-        // # ---> 5
-        $this->schemaFeatureCreator("nav_item", 1, 8, true, [
+        # ---> 4
+        $this->schemaFeatureCreator("nav_item", 1, 1, false, [
             'title' => "long_text",
             'url' => "long_text",
+        ]);
+
+        # ---> 5
+        $this->schemaFeatureCreator("banner", 1, 1, false, [
+            'logo' => "image",
         ]);
 
         # ---> 6
@@ -50,7 +55,7 @@ class SchemaFeatureSeeder extends Seeder
         ]);
 
         # ---> 7
-        $this->schemaFeatureCreator("social", 1, 10, true, [
+        $this->schemaFeatureCreator("social", 1, 20, true, [
             'icon' => "icon",
             'url' => "long_text",
         ]);

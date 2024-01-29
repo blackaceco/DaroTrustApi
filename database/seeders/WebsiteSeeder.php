@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Language;
 use App\Models\Website;
-use Faker\Factory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class WebsiteSeeder extends Seeder
@@ -16,8 +14,8 @@ class WebsiteSeeder extends Seeder
     public function run(): void
     {
         $website = [
-            'title' => "Real Story",
-            'slug' => "real-story",
+            'title' => "Daro Trust",
+            'slug' => "daro-trust",
             'propertyId' => null,
         ];
 
@@ -27,7 +25,7 @@ class WebsiteSeeder extends Seeder
         {
             $languages[$lang['id']] = [
                 'active' => true,
-                'default' => ($lang['abbreviation'] == env("DEFAULT_LANGUAGE_ABBREVATION", "en")),
+                'default' => ($lang['abbreviation'] == "en"),
             ];
         }
 

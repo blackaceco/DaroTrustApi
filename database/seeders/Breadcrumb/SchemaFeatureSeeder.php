@@ -13,16 +13,16 @@ class SchemaFeatureSeeder extends Seeder
     public function run(): void
     {
         // # ---> 1
-        $this->schemaFeatureCreator("feature", "documentary", 3);
+        // $this->schemaFeatureCreator("feature", "documentary", 3);
 
         // # ---> 2
-        $this->schemaFeatureCreator("feature", "storytelling", 3);
+        // $this->schemaFeatureCreator("feature", "storytelling", 3);
 
         // # ---> 3
-        $this->schemaFeatureCreator("feature", "festival", 3);
+        // $this->schemaFeatureCreator("feature", "festival", 3);
 
         // # ---> 4
-        $this->schemaFeatureCreator("feature", "training", 3);
+        // $this->schemaFeatureCreator("feature", "training", 3);
     }
 
 

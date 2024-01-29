@@ -18,7 +18,6 @@ class GroupSeeder extends Seeder
     {
         $this->englishId = Language::where('abbreviation', 'en')->first()->id;
         $this->arabicId = Language::where('abbreviation', 'ar')->first()->id;
-        $this->kurdishId = Language::where('abbreviation', 'ku')->first()->id;
     }
 
     /**
@@ -26,77 +25,26 @@ class GroupSeeder extends Seeder
      */
     public function run(): void
     {
-        $categoryGroupType = $this->createGroupType("categories", "Group", "مجموعة", "گروپ", 4, false, [
-            [
-                'key' => "title",
-                'type' => "short_text",
-            ]
-        ]);
+        // $categoryGroupType = $this->createGroupType("categories", "Group", "مجموعة", "گروپ", 4, false, [
+        //     [
+        //         'key' => "title",
+        //         'type' => "short_text",
+        //     ]
+        // ]);
 
         $groups = [
             // 1
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "documentary", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "History", "تاريخ", "مێژوو"),
-            ],
-            // 2
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "documentary", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "Local", "محلي", "ناوخۆیی"),
-            ],
-            // 3
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "documentary", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "Iraq", "العراق", "عێراق"),
-            ],
-            // 4
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "documentary", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "Economy", "اقتصاد", "ئابووری"),
-            ],
+            // [
+            //     'fields' => ['websiteId' => 1, 'featureTitle' => "documentary", 'groupTypeId' => $categoryGroupType->id],
+            //     'details' => $this->translationGenerator("short_text", "title", "History", "تاريخ", "مێژوو"),
+            // ],
+            
         ];
 
 
         // creating
-        foreach ($groups as $group)
-            Group::create($group['fields'])->details()->createMany($group['details']);
-
-
-
-        $categoryGroupType = $this->createGroupType("locations", "Location", "مكان", "شوێن", 14, false, [
-            [
-                'key' => "title",
-                'type' => "short_text",
-            ]
-        ]);
-
-        $groups = [
-            // 5
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "training", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "As sulaymanyiah", "السليمانية", "سلێمانی"),
-            ],
-            // 6
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "training", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "Erbil", "اربيل", "هەولێر"),
-            ],
-            // 7
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "training", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "Duhok", "دهوك", "دهۆک"),
-            ],
-            // 8
-            [
-                'fields' => ['websiteId' => 1, 'featureTitle' => "training", 'groupTypeId' => $categoryGroupType->id],
-                'details' => $this->translationGenerator("short_text", "title", "Karkuk", "كركوك", "کەرکوک"),
-            ],
-        ];
-
-
-        // creating
-        foreach ($groups as $group)
-            Group::create($group['fields'])->details()->createMany($group['details']);
+        // foreach ($groups as $group)
+        //     Group::create($group['fields'])->details()->createMany($group['details']);
     }
 
 

@@ -3,7 +3,6 @@
 namespace Database\Seeders\Navigation;
 
 use App\Models\NavigationGroup;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class GroupSeeder extends Seeder
@@ -13,21 +12,17 @@ class GroupSeeder extends Seeder
      */
     public function run(): void
     {
-        // # ---> 1
-        $this->groupFieldGenerator("menu", [1]);
+        # ---> 1
+        $this->groupFieldGenerator("navigation", [1, 2]);
 
-        // # ---> 2
-        $this->groupFieldGenerator("menu_top", [2, 3]);
+        # ---> 2
+        $this->groupFieldGenerator("footer_start", [3, 4]);
 
-        // # ---> 3
-        $this->groupFieldGenerator("menu_bottom", [4, 5]);
-
+        # ---> 3
+        $this->groupFieldGenerator("footer_end", [5, 6]);
 
         # ---> 4
-        $this->groupFieldGenerator("footer", [6, 7]);
-
-        # ---> 5
-        // $this->groupFieldGenerator("social", [7]);
+        $this->groupFieldGenerator("socials", [7]);
     }
 
 

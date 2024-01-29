@@ -11,14 +11,12 @@ class ItemSeeder extends Seeder
 {
     private $englishId;
     private $arabicId;
-    private $kurdishId;
     private $order = 1;
 
     public function __construct()
     {
         $this->englishId = Language::where('abbreviation', 'en')->first()->id;
         $this->arabicId = Language::where('abbreviation', 'ar')->first()->id;
-        $this->kurdishId = Language::where('abbreviation', 'ku')->first()->id;
     }
 
     /**
@@ -26,154 +24,181 @@ class ItemSeeder extends Seeder
      */
     public function run(): void
     {
-        // # ---> 1
+        # ---> 1
         $this->createItem(1, "banner", 1, [
-            'title' => [
-                'type' => "short_text",
-                'value_en' => "MENU",
-                'value_ar' => "قائمة",
-                'value_ku' => "پێڕست",
+            'logo' => [
+                'type' => "image",
+                'value_en' => "img/logo.svg",
+                'value_ar' => "img/logo.svg",
             ]
         ]);
 
 
-        // 2 , 6
-        $this->topMenu();
 
 
-        // 7 , 11
-        $this->bottomMenu();
+        # 2 , 5
+        $this->nav_items();;
+
+
         
 
-        // 23 , 28
+        # 6 , 9
         $this->footer();
+
+
+
+        # 10 , 13
+        $this->socials();
     }
 
 
-    private function topMenu()
+
+
+    /**
+     * Create the navigation items
+     */
+    private function nav_items()
     {
-        /**
-         * Banner title
-         */
-        // # ---> 2
-        $this->createItem(2, "banner", 2, [
-            'title' => [
-                'type' => "short_text",
-                'value_en' => "Links",
-                'value_ar' => "الصلات",
-                'value_ku' => "لینکەکان",
-            ]
-        ]);
-
-
-        /**
-         * Links
-         */
         $items = [
-            // # ---> 3
-            '/' => ["Home", "الصفحة الرئيسية", "پەڕەی سەرەکی"],
-            // # ---> 4
-            '/about' => ["About us", "من نحن", "دەربارەی ئێمە"],
-            // # ---> 5
-            '/contact' => ["Contact Us", "اتصل بنا", "پەیوەندیمان پێوە بکە"],
-            // # ---> 6
-            '/trainings' => ["Trainings", "التدريبات", "ڕاهێنانەکان"],
-        ];
-
-        // creating items
-        foreach ($items as $url => $item)
-        {
-            $this->createItem(3, "nav_item", 2, [
+            // home
+            [
                 'title' => [
                     'type' => "long_text",
-                    'value_en' => $item[0],
-                    'value_ar' => $item[1],
-                    'value_ku' => $item[2],
+                    'value_en' => "Home",
+                    'value_ar' => "الصفحة الرئيسية",
                 ],
-                'url' => [
-                    'type' => "long_text",
-                    'value_en' => $url,
-                    'value_ar' => $url,
-                    'value_ku' => $url,
-                ]
-            ]);
-        }
-    }
     
-    private function bottomMenu()
-    {
-        /**
-         * Banner title
-         */
-        // # ---> 7
-        $this->createItem(4, "banner", 3, [
-            'title' => [
-                'type' => "short_text",
-                'value_en' => "Work",
-                'value_ar' => "عمل",
-                'value_ku' => "کار",
-            ]
-        ]);
-
-
-        /**
-         * Links
-         */
-        $items = [
-            // # ---> 8
-            '/promo' => ["Promo", "الترويجي", "پرۆمۆ"],
-            // # ---> 9
-            '/documentary' => ["Documentary", "وثائقي", "دۆکیومێنتاری"],
-            // # ---> 10
-            '/storytelling' => ["Storytelling", "القص", "چیرۆک"],
-            // # ---> 11
-            '/festivals' => ["Festival", "مهرجان", "فیستیڤاڵ"],
-        ];
-
-        // creating items
-        foreach ($items as $url => $item)
-        {
-            $this->createItem(5, "nav_item", 3, [
-                'title' => [
-                    'type' => "long_text",
-                    'value_en' => $item[0],
-                    'value_ar' => $item[1],
-                    'value_ku' => $item[2],
-                ],
                 'url' => [
                     'type' => "long_text",
-                    'value_en' => $url,
-                    'value_ar' => $url,
-                    'value_ku' => $url,
-                ]
-            ]);
+                    'value_en' => "/",
+                    'value_ar' => "/",
+                ],
+            ],
+
+            // about-us
+            [
+                'title' => [
+                    'type' => "long_text",
+                    'value_en' => "About Us",
+                    'value_ar' => "معلومات عنا",
+                ],
+    
+                'url' => [
+                    'type' => "long_text",
+                    'value_en' => "/about-us",
+                    'value_ar' => "/about-us",
+                ],
+            ],
+
+            // services
+            [
+                'title' => [
+                    'type' => "long_text",
+                    'value_en' => "Services",
+                    'value_ar' => "خدمات",
+                ],
+    
+                'url' => [
+                    'type' => "long_text",
+                    'value_en' => "/services",
+                    'value_ar' => "/services",
+                ],
+            ],
+
+            // contacts
+            [
+                'title' => [
+                    'type' => "long_text",
+                    'value_en' => "Contacts",
+                    'value_ar' => "الاتصال",
+                ],
+    
+                'url' => [
+                    'type' => "long_text",
+                    'value_en' => "/contacts",
+                    'value_ar' => "/contacts",
+                ],
+            ],
+        ];
+
+
+        // loop
+        foreach ($items as $item) {
+            $this->createItem(2, "nav_item", 1, $item);
         }
     }
 
 
+    /**
+     * Create the footer items
+     */
     private function footer()
     {
-        // # ---> 12
-        $this->createItem(6, "copyright", 4, [
+        # ---> 6
+        $this->createItem(3, "banner", 2, [
             'title' => [
                 'type' => "long_text",
-                'value_en' => "All rights reserved to Real Story 2023",
-                'value_ar' => "جميع الحقوق محفوظة لريل ستوري 2023",
-                'value_ku' => "هەموو مافەکان پارێزراوە بۆ Real Story 2023",
+                'value_en' => "Talk with us about your next project",
+                'value_ar' => "تحدث معنا عن مشروعك القادم",
+            ],
+
+            'description' => [
+                'type' => "textarea",
+                'value_en' => "Join us on a journey where reliability meets innovation, and customer satisfaction is not just a goal but a standard.",
+                'value_ar' => "انضم إلينا في رحلة حيث تجتمع الموثوقية مع الابتكار، ورضا العملاء ليس مجرد هدف بل معيار.",
+            ],
+        ]);
+
+        # ---> 7
+        $this->createItem(4, "nav_item", 2, [
+            'title' => [
+                'type' => "long_text",
+                'value_en' => "Contact us",
+                'value_ar' => "اتصل بنا",
+            ],
+
+            'url' => [
+                'type' => "long_text",
+                'value_en' => "/contacts",
+                'value_ar' => "/contacts",
+            ],
+        ]);
+
+        # ---> 8
+        $this->createItem(5, "banner", 3, [
+            'logo' => [
+                'type' => "image",
+                'value_en' => "img/logo-mask.svg",
+                'value_ar' => "img/logo-mask.svg",
             ]
         ]);
 
+        # ---> 9
+        $this->createItem(6, "copyright", 3, [
+            'copyright' => [
+                'type' => "long_text",
+                'value_en' => "All rights reserved to Dark Trust 2023",
+                'value_ar' => "جميع الحقوق محفوظة لشركة Dark Trust 2023",
+            ]
+        ]);
+    }
 
+
+    /**
+     * Create the social items
+     */
+    private function socials()
+    {
         // socials
         $socials = [
-            // # ---> 13
-            'facebook.com' => ["fa6-brands:facebook-f", "fa6-brands:facebook-f", "fa6-brands:facebook-f"],
-            // # ---> 14
-            'instagram.com' => ["fa6-brands:twitter", "fa6-brands:twitter", "fa6-brands:twitter"],
-            // # ---> 15
-            'youtube.com' => ["fa6-brands:instagram", "fa6-brands:instagram", "fa6-brands:instagram"],
-            // // # ---> 16
-            // 'linkedin.com' => ["linkedin", "linkedin", "linkedin"],
+            # ---> 10
+            'facebook.com' => ["fa6-brands:facebook-f", "fa6-brands:facebook-f"],
+            # ---> 11
+            'instagram.com' => ["fa6-brands:twitter", "fa6-brands:twitter"],
+            # ---> 12
+            'youtube.com' => ["fa6-brands:youtube", "fa6-brands:youtube"],
+            # ---> 13
+            'linkedin.com' => ["fa6-brands:linkedin", "fa6-brands:linkedin"],
         ];
 
         // creating socials
@@ -183,13 +208,11 @@ class ItemSeeder extends Seeder
                     'type' => "long_text",
                     'value_en' => $social[0],
                     'value_ar' => $social[1],
-                    'value_ku' => $social[2],
                 ],
                 'url' => [
                     'type' => "long_text",
                     'value_en' => $url,
                     'value_ar' => $url,
-                    'value_ku' => $url,
                 ]
             ]);
     }
@@ -220,7 +243,7 @@ class ItemSeeder extends Seeder
         foreach ($details as $key => $detail)
             $preparedDetails = array_merge(
                 $preparedDetails,
-                $this->translationGenerator($detail['type'], $key, $detail['value_en'], $detail['value_ar'], $detail['value_ku'])
+                $this->translationGenerator($detail['type'], $key, $detail['value_en'], $detail['value_ar'])
             );
 
         $navigation_item->details()->createMany($preparedDetails);
@@ -235,7 +258,7 @@ class ItemSeeder extends Seeder
     }
 
 
-    private function translationGenerator($type, $key, $value_en, $value_ar, $value_ku)
+    private function translationGenerator($type, $key, $value_en, $value_ar)
     {
         $translations = [];
 
@@ -255,15 +278,6 @@ class ItemSeeder extends Seeder
             'valueType' => $type,
             'key' => $key,
             'value' => $value_ar,
-        ];
-
-        // Kurdish
-        $translations[] = [
-            'itemId' => 1,
-            'languageId' => $this->kurdishId,
-            'valueType' => $type,
-            'key' => $key,
-            'value' => $value_ku,
         ];
 
 

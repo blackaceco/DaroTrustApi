@@ -86,7 +86,7 @@ class ItemDetail extends Model
      */
     protected function value(): Attribute
     {
-        $types = ['image', 'thumbnail', 'gallery', 'video'];
+        $types = ['image', 'thumbnail', 'gallery', 'video', 'attachment'];
         return Attribute::make(
             get: fn ($value) => in_array($this->valueType, $types) ? getFileLink($value) : $value,
         );
