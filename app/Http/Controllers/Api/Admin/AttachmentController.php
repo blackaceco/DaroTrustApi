@@ -124,9 +124,9 @@ class AttachmentController extends Controller
 
         // save the file
         if (config('filesystems.default' == 'local'))
-            $file_path = $request->file('file')->store($request->input('path', ''), 'public');
+            $file_path = $request->file('file')->store($request->input('directory', ''), 'public');
         else
-            $file_path = $request->file('file')->store($request->input('path', ''));
+            $file_path = $request->file('file')->store($request->input('directory', ''));
 
         // return success response including the file's name
         return $this->successResponse("Successfully saved.", [
