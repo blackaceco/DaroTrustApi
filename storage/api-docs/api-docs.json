@@ -12,6 +12,20 @@
                 ],
                 "summary": "auth",
                 "operationId": "d9a5001328eec7da143fb43cfb5a5418",
+                "parameters": [
+                    {
+                        "name": "adminId",
+                        "in": "query",
+                        "description": "id of an existing admin.",
+                        "required": false
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "number of pagination.",
+                        "required": false
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "",
@@ -129,6 +143,38 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/api/admin/activity-logs/{activity_log}": {
+            "get": {
+                "tags": [
+                    "Admin - activity-logs"
+                ],
+                "summary": "auth",
+                "operationId": "e35643d5c8c58e3a6c56f552a6fe73d0",
+                "parameters": [
+                    {
+                        "name": "activity_log",
+                        "in": "path",
+                        "description": "id of an existing log.",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "invalid id."
                     }
                 }
             }
@@ -1790,6 +1836,18 @@
                         "in": "path",
                         "description": "id of an existing website.",
                         "required": true
+                    },
+                    {
+                        "name": "groupTypeId",
+                        "in": "path",
+                        "description": "id of an existing groupTypeId.",
+                        "required": true
+                    },
+                    {
+                        "name": "featureTitle",
+                        "in": "path",
+                        "description": "a featureTitle of groups.",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -2195,6 +2253,73 @@
                 "responses": {
                     "200": {
                         "description": "the group has been deleted successfully."
+                    },
+                    "404": {
+                        "description": "invalid id."
+                    }
+                }
+            }
+        },
+        "/api/admin/{website}/group-types": {
+            "get": {
+                "tags": [
+                    "Admin - group_types"
+                ],
+                "summary": "auth",
+                "operationId": "6aa51fb1eb8b4c7484f9be9841f07c17",
+                "parameters": [
+                    {
+                        "name": "website",
+                        "in": "path",
+                        "description": "id of an existing website.",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/admin/{website}/group-types/{group}": {
+            "get": {
+                "tags": [
+                    "Admin - group_types"
+                ],
+                "summary": "auth",
+                "operationId": "53e88785a7928097c073aed1a649afd1",
+                "parameters": [
+                    {
+                        "name": "website",
+                        "in": "path",
+                        "description": "id of an existing website.",
+                        "required": true
+                    },
+                    {
+                        "name": "group",
+                        "in": "path",
+                        "description": "id of an existing group.",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "invalid id."
@@ -2864,6 +2989,52 @@
                 "responses": {
                     "200": {
                         "description": "the item detail has been deleted successfully."
+                    },
+                    "404": {
+                        "description": "invalid id."
+                    }
+                }
+            }
+        },
+        "/api/admin/{website}/items/update-order": {
+            "put": {
+                "tags": [
+                    "Admin - items"
+                ],
+                "summary": "auth",
+                "operationId": "c7178f645f2c7fd3fe900b8d158327e1",
+                "parameters": [
+                    {
+                        "name": "website",
+                        "in": "path",
+                        "description": "id of an existing website.",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Items order updated successfully."
                     },
                     "404": {
                         "description": "invalid id."
