@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('subject');
             $table->string('name');
             $table->string('email');
-            $table->string('phone');
+            // $table->string('phone');
             $table->text('message');
             $table->string('ipAddress');
             $table->string('status')->default('pending');   // pending , seen , accepted , rejected
