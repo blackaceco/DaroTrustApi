@@ -192,13 +192,13 @@ class ItemSeeder extends Seeder
         // socials
         $socials = [
             # ---> 10
-            'facebook.com' => ["fa6-brands:facebook-f", "fa6-brands:facebook-f"],
+            'facebook.com' => ["jam:facebook", "jam:facebook"],
             # ---> 11
-            'instagram.com' => ["fa6-brands:twitter", "fa6-brands:twitter"],
+            'instagram.com' => ["bi:instagram", "bi:instagram"],
             # ---> 12
-            'youtube.com' => ["fa6-brands:youtube", "fa6-brands:youtube"],
+            'youtube.com' => ["cib:youtube", "cib:youtube"],
             # ---> 13
-            'linkedin.com' => ["fa6-brands:linkedin", "fa6-brands:linkedin"],
+            'linkedin.com' => ["brandico:linkedin", "brandico:linkedin"],
         ];
 
         // creating socials

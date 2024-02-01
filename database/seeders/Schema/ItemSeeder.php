@@ -458,19 +458,19 @@ class ItemSeeder extends Seeder
          */
         # ---> 28
         $this->itemFieldsGenerator(17, "contact", [9], [
-            'icon' => ['type' => "icon", 'en' => "ooui:map-pin", 'ar' => "ooui:map-pin"],
+            'icon' => ['type' => "icon", 'en' => "ic:sharp-location-on", 'ar' => "ic:sharp-location-on"],
             'value' => ['type' => "long_text", 'en' => "101 Shorsh alley - str. No. 87 / Sulaymaniyah - Iraq", 'ar' => "101 الزقاق السادس عشر - المستوى. لا. 87 / السليمانية – العراق"],
         ]);
 
         # ---> 29
         $this->itemFieldsGenerator(17, "contact", [9], [
-            'icon' => ['type' => "icon", 'en' => "tabler:mail-filled", 'ar' => "tabler:mail-filled"],
+            'icon' => ['type' => "icon", 'en' => "bi:envelope-fill", 'ar' => "bi:envelope-fill"],
             'value' => ['type' => "long_text", 'en' => "info@darotrust.co", 'ar' => "info@darotrust.co"],
         ]);
 
         # ---> 30
         $this->itemFieldsGenerator(17, "contact", [9], [
-            'icon' => ['type' => "icon", 'en' => "carbon:phone-filled", 'ar' => "carbon:phone-filled"],
+            'icon' => ['type' => "icon", 'en' => "solar:phone-bold", 'ar' => "solar:phone-bold"],
             'value' => ['type' => "long_text", 'en' => "+964 770 601 8484", 'ar' => "+964 770 101 8484"],
         ]);
 
