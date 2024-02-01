@@ -25,6 +25,7 @@ class LocalizationSeeder extends Seeder
             $this->localizationGenerator("prev", "PREV", "السابق"),
             $this->localizationGenerator("next", "NEXT", "التالي"),
             $this->localizationGenerator("more", "More", "أكثر", "زیاتر"),
+            $this->localizationGenerator("discover_more", "Discover More", "إكتشف أكثر", "زیاتر بدۆزەرەوە"),
         ];
 
 

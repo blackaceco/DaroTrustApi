@@ -509,7 +509,7 @@ class ItemSeeder extends Seeder
         $button_text_ar = "معلومات عنا";
         $button_url = "/about";
         # ---> 33
-        $this->itemFieldsGenerator(20, "value", [11], [
+        $this->itemFieldsGenerator(20, "value", [11, 5], [
             'title' => ['type' => "long_text", 'en' => $title_en, 'ar' => $title_ar],
             'description' => ['type' => "textarea", 'en' => $description_en, 'ar' => $description_ar],
             'button_text' => ['type' => "long_text", 'en' => $button_text_en, 'ar' => $button_text_ar],

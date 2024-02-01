@@ -85,8 +85,8 @@ class ItemSeeder extends Seeder
     
                 'url' => [
                     'type' => "long_text",
-                    'value_en' => "/about-us",
-                    'value_ar' => "/about-us",
+                    'value_en' => "/about",
+                    'value_ar' => "/about",
                 ],
             ],
 
@@ -115,8 +115,8 @@ class ItemSeeder extends Seeder
     
                 'url' => [
                     'type' => "long_text",
-                    'value_en' => "/contacts",
-                    'value_ar' => "/contacts",
+                    'value_en' => "/contact",
+                    'value_ar' => "/contact",
                 ],
             ],
         ];
