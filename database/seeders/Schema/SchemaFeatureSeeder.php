@@ -26,7 +26,7 @@ class SchemaFeatureSeeder extends Seeder
         ]);
         
         # ---> 3  ,  home:feature
-        $this->schemaFeatureCreator("feature", 3, 3, true, false, false, [
+        $this->schemaFeatureCreator("feature", 3, null, true, false, false, [
             'banner' => "short_text",
             'title' => "long_text",
             'image' => "image",

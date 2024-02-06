@@ -40,8 +40,8 @@ class ItemSeeder extends Seeder
         $this->contactItems();
 
 
-        # 32 , 33
-        $this->serviceItems();
+        // # 32 , 33
+        // $this->serviceItems();
 
 
 
@@ -274,7 +274,7 @@ class ItemSeeder extends Seeder
         $description_ar = "إدراكًا للطبيعة العالمية للتجارة والتبادل التجاري، فإن شركة Daro Trust Company مجهزة تجهيزًا جيدًا للتعامل مع الخدمات اللوجستية الدولية. تمكننا شبكتنا الموسعة وشراكاتنا الإستراتيجية من تقديم خدمات نقل سلسة على نطاق عالمي، مما يسهل التدفق السلس للبضائع عبر الحدود.";
         $image = "/img/loading-cargo-into-the-ship-in-harbor-2023-11-27-04-56-46-utc.jpg";
         # ---> 12
-        $this->itemFieldsGenerator(7, "about", [5, 4], [
+        $this->itemFieldsGenerator(7, "service", [5, 4], [
             'banner' => ['type' => "short_text", 'en' => $banner_en, 'ar' => $banner_ar],
             'title' => ['type' => "short_text", 'en' => $title_en, 'ar' => $title_ar],
             'description' => ['type' => "textarea", 'en' => $description_en, 'ar' => $description_ar],
@@ -289,11 +289,29 @@ class ItemSeeder extends Seeder
         $description_ar = "إدراكًا للطبيعة العالمية للتجارة والتبادل التجاري، فإن شركة Daro Trust Company مجهزة تجهيزًا جيدًا للتعامل مع الخدمات اللوجستية الدولية. تمكننا شبكتنا الموسعة وشراكاتنا الإستراتيجية من تقديم خدمات نقل سلسة على نطاق عالمي، مما يسهل التدفق السلس للبضائع عبر الحدود.";
         $image = "img/industrial-equipment-2023-11-27-05-30-46-utc.jpg";
         # ---> 13
-        $this->itemFieldsGenerator(7, "about", [5, 4], [
+        $this->itemFieldsGenerator(7, "service", [5, 4], [
             'banner' => ['type' => "short_text", 'en' => $banner_en, 'ar' => $banner_ar],
             'title' => ['type' => "short_text", 'en' => $title_en, 'ar' => $title_ar],
             'description' => ['type' => "textarea", 'en' => $description_en, 'ar' => $description_ar],
             'image' => ['type' => "image", 'en' => $image, 'ar' => $image],
+        ]);
+        $this->itemFieldsGenerator(19, "banner", [5], [
+            'title' => ['type' => "long_text", 'en' => "Services", 'ar' => "خدمات"],
+        ]);
+
+        $title_en = "Our Values are everything";
+        $title_ar = "قيمنا هي كل شيء";
+        $description_en = "Return to our home page to explore more about Daro Trust Company and discover the full range of logistics solutions we offer.";
+        $description_ar = "ارجع إلى صفحتنا الرئيسية لاستكشاف المزيد عن شركة Daro Trust واكتشف المجموعة الكاملة من الحلول اللوجستية التي نقدمها.";
+        $button_text_en = "About us";
+        $button_text_ar = "معلومات عنا";
+        $button_url = "/about";
+        # ---> 33
+        $this->itemFieldsGenerator(20, "value", [4, 5], [
+            'title' => ['type' => "long_text", 'en' => $title_en, 'ar' => $title_ar],
+            'description' => ['type' => "textarea", 'en' => $description_en, 'ar' => $description_ar],
+            'button_text' => ['type' => "long_text", 'en' => $button_text_en, 'ar' => $button_text_ar],
+            'button_url' => ['type' => "long_text", 'en' => $button_url, 'ar' => $button_url],
         ]);
     }
 
@@ -491,29 +509,4 @@ class ItemSeeder extends Seeder
         ]);
     }
 
-    private function serviceItems()
-    {
-        /**
-         * Banner
-         */
-        # ---> 32
-        $this->itemFieldsGenerator(19, "banner", [11], [
-            'title' => ['type' => "long_text", 'en' => "Services", 'ar' => "خدمات"],
-        ]);
-
-        $title_en = "Our Values are everything";
-        $title_ar = "قيمنا هي كل شيء";
-        $description_en = "Return to our home page to explore more about Daro Trust Company and discover the full range of logistics solutions we offer.";
-        $description_ar = "ارجع إلى صفحتنا الرئيسية لاستكشاف المزيد عن شركة Daro Trust واكتشف المجموعة الكاملة من الحلول اللوجستية التي نقدمها.";
-        $button_text_en = "About us";
-        $button_text_ar = "معلومات عنا";
-        $button_url = "/about";
-        # ---> 33
-        $this->itemFieldsGenerator(20, "value", [11, 5], [
-            'title' => ['type' => "long_text", 'en' => $title_en, 'ar' => $title_ar],
-            'description' => ['type' => "textarea", 'en' => $description_en, 'ar' => $description_ar],
-            'button_text' => ['type' => "long_text", 'en' => $button_text_en, 'ar' => $button_text_ar],
-            'button_url' => ['type' => "long_text", 'en' => $button_url, 'ar' => $button_url],
-        ]);
-    }
 }

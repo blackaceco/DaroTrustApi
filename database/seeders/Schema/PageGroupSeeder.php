@@ -37,6 +37,7 @@ class PageGroupSeeder extends Seeder
 
         # ---> 5  ,  services
         $this->groupFieldGenerator("services", "service", [
+            19 => ['primary' => true],
             7 => ['primary' => true],
             20 => ['primary' => false],
         ]);
@@ -84,11 +85,11 @@ class PageGroupSeeder extends Seeder
 
 
 
-        # ---> 11  ,  service:service
-        $this->groupFieldGenerator("service", "service", [
-            19 => ['primary' => true],
-            20 => ['primary' => true],
-        ]);
+        // # ---> 11  ,  service:service
+        // $this->groupFieldGenerator("service", "service", [
+        //     19 => ['primary' => true],
+        //     20 => ['primary' => true],
+        // ]);
     }
 
 
