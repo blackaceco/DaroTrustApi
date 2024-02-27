@@ -315,7 +315,7 @@ class ItemController extends Controller
             // 'values.*.languageId' => "required|exists:languages,id",
             'values.*.valueType' => "required|string|max:255",
             'values.*.valueKey' => "required|string|max:255",
-            'values.*.value' => "required|string|max:255",
+            'values.*.value' => "required|string",
             // 'values.*.order' => "required|string|max:255",
         ], $this);
         $old_values = $item->fieldValues();
